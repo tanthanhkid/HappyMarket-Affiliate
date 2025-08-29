@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyMarket - Sản phẩm Affiliate TikTok Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>HappyMarket</h1>
+                <span class="subtitle">TikTok Shop Affiliate</span>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link">Trang chủ</a>
+               
+                <a href="#support" class="nav-link">Hỗ trợ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Khám phá sản phẩm kiếm tiền</h2>
+            <p>Tìm kiếm và chia sẻ sản phẩm TikTok Shop để kiếm hoa hồng</p>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+            </div>
+            
+            <div class="filters">
+                <div class="filter-group">
+                    <label>Ngành hàng:</label>
+                    <select id="categoryFilter">
+                        <option value="">Tất cả</option>
+                        <optgroup label="Thời trang & Phụ kiện">
+                            <option value="thoi-trang-nam">Thời trang nam</option>
+                            <option value="thoi-trang-nu">Thời trang nữ</option>
+                            <option value="giay-dep">Giày dép</option>
+                            <option value="tui-xach">Túi xách</option>
+                            <option value="trang-suc">Trang sức</option>
+                            <option value="dong-ho">Đồng hồ</option>
+                        </optgroup>
+                        <optgroup label="Làm đẹp & Chăm sóc">
+                            <option value="my-pham">Mỹ phẩm</option>
+                            <option value="cham-soc-da">Chăm sóc da</option>
+                            <option value="cham-soc-toc">Chăm sóc tóc</option>
+                            <option value="nuoc-hoa">Nước hoa</option>
+                            <option value="dung-cu-lam-dep">Dụng cụ làm đẹp</option>
+                        </optgroup>
+                        <optgroup label="Gia dụng & Nội thất">
+                            <option value="noi-bat">Nồi bát</option>
+                            <option value="do-dien-gia-dung">Đồ điện gia dụng</option>
+                            <option value="noi-that">Nội thất</option>
+                            <option value="trang-tri">Trang trí</option>
+                        </optgroup>
+                        <optgroup label="Sức khỏe & Thể thao">
+                            <option value="thuc-pham-chuc-nang">Thực phẩm chức năng</option>
+                            <option value="dung-cu-y-te">Dụng cụ y tế</option>
+                            <option value="do-the-thao">Đồ thể thao</option>
+                            <option value="fitness">Fitness & Gym</option>
+                            <option value="outdoor">Outdoor</option>
+                        </optgroup>
+                        <optgroup label="Điện tử & Công nghệ">
+                            <option value="dien-thoai">Điện thoại</option>
+                            <option value="phu-kien-dien-tu">Phụ kiện điện tử</option>
+                            <option value="may-tinh">Máy tính</option>
+                            <option value="am-thanh">Âm thanh</option>
+                            <option value="smart-home">Smart Home</option>
+                        </optgroup>
+                        <optgroup label="Mẹ & Bé">
+                            <option value="do-choi-tre-em">Đồ chơi trẻ em</option>
+                        </optgroup>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Sắp xếp theo:</label>
+                    <select id="sortFilter">
+                        <option value="earnings-desc">Hoa hồng cao nhất</option>
+                        <option value="earnings-asc">Hoa hồng thấp nhất</option>
+                        <option value="price-desc">Giá cao nhất</option>
+                        <option value="price-asc">Giá thấp nhất</option>
+                        <option value="name">Tên A-Z</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Hoa hồng tối thiểu:</label>
+                    <input type="range" id="earningsRange" min="0" max="50000" value="0">
+                    <span id="earningsValue">0₫</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-header">
+                <h3>Sản phẩm nổi bật</h3>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+            
+            <div class="load-more">
+                <button id="loadMoreBtn" class="btn btn-secondary">
+                    <i class="fas fa-plus"></i> Xem thêm sản phẩm
+                </button>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>HappyMarket</h4>
+                    <p>Nền tảng affiliate TikTok Shop hàng đầu Việt Nam</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên kết</h4>
+                    <ul>
+                        <li><a href="#about">Về chúng tôi</a></li>
+                        <li><a href="#contact">Liên hệ</a></li>
+                        <li><a href="#terms">Điều khoản</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="#help">Trung tâm trợ giúp</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#tutorial">Hướng dẫn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HappyMarket. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <img id="modalImage" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h3 id="modalTitle"></h3>
+                    <div class="modal-pricing">
+                        <span class="current-price" id="modalCurrentPrice"></span>
+                        <span class="original-price" id="modalOriginalPrice"></span>
+                        <span class="discount" id="modalDiscount"></span>
+                    </div>
+                    <div class="modal-earnings">
+                        <div class="earnings-badge">
+                            <i class="fas fa-coins"></i>
+                            <span>Kiếm được <strong id="modalEarnings"></strong></span>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary" id="shareBtn">
+                            <i class="fas fa-share"></i> Chia sẻ ngay
+                        </button>
+                        <button class="btn btn-secondary" id="copyLinkBtn">
+                            <i class="fas fa-copy"></i> Sao chép link
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
